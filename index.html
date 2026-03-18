@@ -36,6 +36,12 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+
+        header.hidden {
+            transform: translateY(-100%);
         }
 
         .top-bar {
@@ -1011,7 +1017,7 @@
     </style>
 </head>
 <body>
-    <!-- Шапка сайта (фиксированная, не скрывается) -->
+    <!-- Шапка сайта (скрывается при прокрутке вниз) -->
     <header>
         <div class="top-bar">
             <div class="container top-bar-content">
@@ -1483,6 +1489,11 @@
             }
         ];
 
+        // Переменные для скролла
+        let lastScroll = 0;
+        const header = document.querySelector('header');
+        const scrollThreshold = 100; // Порог прокрутки для скрытия шапки
+
         // Функция показа уведомления
         function showNotification(message) {
             const notification = document.createElement('div');
@@ -1528,7 +1539,6 @@
                     break;
             }
             
-            // В реальном проекте здесь должен быть AJAX-запрос к серверу
             // Для демонстрации показываем уведомление
             console.log(`Отправка на ${email}:`, { subject, body });
             showNotification(`✅ Данные отправлены на почту ${email}`);
@@ -1692,6 +1702,23 @@
         function closeModal() {
             document.getElementById('vacancyModal').classList.remove('active');
         }
+
+        // Обработка скролла для скрытия/показа шапки
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            // Проверяем направление скролла и величину прокрутки
+            if (currentScroll > lastScroll && currentScroll > scrollThreshold) {
+                // Скролл вниз и проскроллили больше порога - скрываем шапку
+                header.classList.add('hidden');
+            } else {
+                // Скролл вверх или мы в начале страницы - показываем шапку
+                header.classList.remove('hidden');
+            }
+            
+            // Обновляем последнюю позицию скролла
+            lastScroll = currentScroll;
+        });
 
         // Работа табов
         document.querySelectorAll('.tab-btn').forEach(button => {

@@ -894,6 +894,53 @@
             }
         }
 
+        /* Контактный блок */
+        .contact-block {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 40px 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-item i {
+            font-size: 2rem;
+            color: gold;
+            width: 40px;
+            text-align: center;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .contact-item a:hover {
+            color: gold;
+        }
+
         /* Адаптивность */
         @media (max-width: 1100px) {
             .eljur-content {
@@ -1022,8 +1069,8 @@
         <div class="top-bar">
             <div class="container top-bar-content">
                 <div class="contact-top">
-                    <span><i class="fas fa-phone"></i> +7 (4712) 55-35-35</span>
-                    <span><i class="fas fa-envelope"></i> gymnasium35@kursk.ru</span>
+                    <span><i class="fas fa-phone"></i> +7 (983) 242-03-49</span>
+                    <span><i class="fas fa-envelope"></i> anodouniversariy@gmail.com</span>
                 </div>
                 <div class="auth-links">
                     <a href="#" style="color: white; text-decoration: none; margin-left: 15px;" onclick="openEljur()">
@@ -1137,6 +1184,46 @@
             </div>
         </div>
     </section>
+
+    <!-- Контактный блок -->
+    <div class="container">
+        <div class="contact-block">
+            <h3 style="text-align: center; margin-bottom: 30px; font-size: 2rem;">Наши контакты</h3>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <div style="font-size: 0.9rem; opacity: 0.9;">Телефон</div>
+                        <a href="tel:+79832420349">+7 (983) 242-03-49</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <div style="font-size: 0.9rem; opacity: 0.9;">Email</div>
+                        <a href="mailto:anodouniversariy@gmail.com">anodouniversariy@gmail.com</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fab fa-vk"></i>
+                    <div>
+                        <div style="font-size: 0.9rem; opacity: 0.9;">Сообщество ВКонтакте</div>
+                        <a href="https://vk.com/club236206221" target="_blank">vk.com/club236206221</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fab fa-telegram"></i>
+                    <div>
+                        <div style="font-size: 0.9rem; opacity: 0.9;">Telegram-канал</div>
+                        <a href="https://t.me/+8U56DJja7-JhNGIy" target="_blank">t.me/gymnasium35</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Основное содержимое -->
     <main class="container">
@@ -1378,22 +1465,6 @@
         <div style="background: white; padding: 40px; border-radius: 12px; margin: 40px 0;">
             <p>ЧОУ «Гимназия №35» города Курска была основана в 1995 году. С 2020 года гимназия активно внедряет цифровые технологии в образовательный процесс, став пионером в использовании системы АИС «ЭлЖур» в Курской области.</p>
         </div>
-
-        <!-- Контакты -->
-        <h2 class="section-title" id="contacts">Контакты</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin: 40px 0;">
-            <div style="background: white; padding: 30px; border-radius: 12px;">
-                <h3 style="color: #1e3c72; margin-bottom: 20px;"><i class="fas fa-map-marker-alt"></i> Адрес</h3>
-                <p>305000, г. Курск, ул. Ленина, д. 35</p>
-            </div>
-
-            <div style="background: white; padding: 30px; border-radius: 12px;">
-                <h3 style="color: #1e3c72; margin-bottom: 20px;"><i class="fas fa-phone"></i> Контакты</h3>
-                <p><i class="fas fa-phone"></i> +7 (4712) 55-35-35</p>
-                <p><i class="fas fa-envelope"></i> gymnasium35@kursk.ru</p>
-                <p><i class="fas fa-laptop"></i> Поддержка ЭлЖур: eljur@gymnasium35.ru</p>
-            </div>
-        </div>
     </main>
 
     <!-- Модальное окно для отклика на вакансию -->
@@ -1432,8 +1503,9 @@
                     <div class="footer-logo">Гимназия №35</div>
                     <p>Частное общеобразовательное учреждение г. Курска.</p>
                     <div class="social-icons">
-                        <a href="#"><i class="fab fa-vk"></i></a>
-                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="https://vk.com/club236206221" target="_blank" title="ВКонтакте"><i class="fab fa-vk"></i></a>
+                        <a href="https://t.me/+8U56DJja7-JhNGIy" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="mailto:anodouniversariy@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
 
@@ -1451,13 +1523,15 @@
                 <div class="footer-section">
                     <h4>Контакты</h4>
                     <p><i class="fas fa-map-marker-alt"></i> г. Курск, ул. Ленина, 35</p>
-                    <p><i class="fas fa-phone"></i> +7 (4712) 55-35-35</p>
-                    <p><i class="fas fa-envelope"></i> gymnasium35@kursk.ru</p>
+                    <p><i class="fas fa-phone"></i> +7 (983) 242-03-49</p>
+                    <p><i class="fas fa-envelope"></i> anodouniversariy@gmail.com</p>
+                    <p><i class="fab fa-telegram"></i> <a href="https://t.me/+8U56DJja7-JhNGIy" target="_blank" style="color: #aaa;">Telegram-канал</a></p>
                 </div>
             </div>
 
             <div class="copyright">
                 <p>© 2026 ЧОУ «Гимназия №35», г. Курск. Работаем на платформе АИС «ЭлЖур»</p>
+                <p>Телефон: +7 (983) 242-03-49 | Email: anodouniversariy@gmail.com</p>
             </div>
         </div>
     </footer>
